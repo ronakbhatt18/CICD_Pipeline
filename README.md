@@ -10,7 +10,7 @@ A WAR is generated at 'target/project.war'
 This Reposatory also contains `Jenkinsfile`, Pipeline script for build, test & deploy in sequence
 
 ## Jenkins Project URL
-[Jenkins Project](http://ec2-35-174-168-193.compute-1.amazonaws.com:8080/job/Test-Project/)
+[Jenkins Project](http://ec2-54-161-143-34.compute-1.amazonaws.com:8080/job/Test-Project/)
 
 # Server Setup Process
 I created an EC2 server with ubuntu AMI in public subnet, with public ip enabled and 8080, 8888 security group open to all
