@@ -26,7 +26,7 @@ pipeline {
         stage('Run/Deploy') {
             steps {
                 sh "cp $workspace$srcwarPath $tomcatDeployDir"
-                echo "http://public-ip:8888/project/"
+                echo "http://ec2-54-161-143-34.compute-1.amazonaws.com:8888/project/"
             }
         }
     }
