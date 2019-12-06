@@ -1,6 +1,6 @@
 def tomcatDeployDir = "/opt/tomcat/apache-tomcat-8.5.49/webapps/"
 def srcwarPath="/target/project.war"
-def dstwarPath= ""
+def dstwarPath= "project.war"
 
 pipeline {
 
@@ -18,10 +18,15 @@ pipeline {
                 sh 'mvn test' 
             }
         }
+        stage('remove old version') {
+            steps {
+                sh "rm $tomcatDeployDir$dstwarPath"
+            }
+        }
         stage('Run/Deploy') {
             steps {
-                sh "echo $tomcatDeployDir"
                 sh "cp $workspace$srcwarPath $tomcatDeployDir"
+                echo "http://public-ip:8888/project/"
             }
         }
     }
